@@ -5,6 +5,7 @@ const zodiac_signs =
     [{sign: "Capricorn",
     start_month: 12,
     start_day: 22,
+    days_in_start_month: 31,
     end_month: 1,
     end_day: 19,
     sound: "audio/cap.mp3",
@@ -14,6 +15,8 @@ const zodiac_signs =
     {sign: "Aquarius",
     start_month: 1,
     start_day: 20,
+    days_in_start_month: 31,
+    days_in_end_month: 28,
     end_month: 2,
     end_day: 18,
     sound: "audio/aqua.mp3",
@@ -23,6 +26,8 @@ const zodiac_signs =
     {sign: "Pisces",
     start_month: 2,
     start_day: 19,
+    days_in_start_month: 28,
+    days_in_end_month: 31,
     end_month: 3,
     end_day: 20,
     sound: "audio/pisc.mp3",
@@ -32,6 +37,8 @@ const zodiac_signs =
     {sign: "Aries",
     start_month: 3,
     start_day: 21,
+    days_in_start_month: 31,
+    days_in_end_month: 30,
     end_month: 4,
     end_day: 19,
     sound: "audio/aries.mp3",
@@ -39,8 +46,10 @@ const zodiac_signs =
     description: "bold, impulsive, passionate"},
 
     {sign: "Taurus",
-    start_month: 2,
+    start_month: 4,
     start_day: 20,
+    days_in_start_month: 30,
+    days_in_end_month: 31,
     end_month: 5,
     end_day: 20,
     sound: "audio/taur.mp3",
@@ -50,6 +59,8 @@ const zodiac_signs =
     {sign: "Gemini",
     start_month: 5,
     start_day: 21,
+    days_in_start_month: 31,
+    days_in_end_month: 30,
     end_month: 6,
     end_day: 20,
     sound: "audio/gem.mp3",
@@ -59,6 +70,8 @@ const zodiac_signs =
     {sign: "Cancer",
     start_month: 6,
     start_day: 21,
+    days_in_start_month: 30,
+    days_in_end_month: 31,
     end_month: 7,
     end_day: 22,
     sound: "audio/canc.mp3",
@@ -68,6 +81,8 @@ const zodiac_signs =
     {sign: "Leo",
     start_month: 7,
     start_day: 23,
+    days_in_start_month: 31,
+    days_in_end_month: 31,
     end_month: 8,
     end_day: 22,
     sound: "audio/leo.mp3",
@@ -77,6 +92,8 @@ const zodiac_signs =
     {sign: "Virgo",
     start_month: 8,
     start_day: 23,
+    days_in_start_month: 31,
+    days_in_end_month: 30,
     end_month: 9,
     end_day: 22,
     sound: "audio/virg.mp3",
@@ -86,6 +103,8 @@ const zodiac_signs =
     {sign: "Libra",
     start_month: 9,
     start_day: 23,
+    days_in_start_month: 30,
+    days_in_end_month: 31,
     end_month: 10,
     end_day: 22,
     sound: "audio/lib.mp3",
@@ -95,6 +114,8 @@ const zodiac_signs =
     {sign: "Scorpio",
     start_month: 10,
     start_day: 23,
+    days_in_start_month: 31,
+    days_in_end_month: 30,
     end_month: 11,
     end_day: 21,
     sound: "audio/scorp.mp3",
@@ -104,6 +125,8 @@ const zodiac_signs =
     {sign: "Sagittarius",
     start_month: 11,
     start_day: 22,
+    days_in_start_month: 30,
+    days_in_end_month: 31,
     end_month: 12,
     end_day: 21,
     sound: "audio/sag.mp3",
@@ -118,24 +141,36 @@ const zodiac_signs =
     function play_sign_sound() {
         console.log("play_sign_sound: plays selected sign's audio clip");
     }
-    function find_sign() {
-        console.log("find_sign: finds user's sign based off of date")
-    }
-    function display_sign() {
-        console.log("display_sign: displays user's sign")
-    }
+  
     function open_help() {
         console.log("open_help: opens help page")
     }
+    
     function save_last_sign() {
         console.log("save_last_sign: saves last sign")
+
+
+
+
+const number_of_zodiac = zodiac_signs.length
+for (let i=0; i < number_of_zodiac; i++) {
+    console.log(`${i+1}. ${zodiac_signs[i].sign}`)
+}
+  
+//function get_sign(month,day) {
+   // for (const sign in zodiac_signs) {
+        //if (day >= sign.start_day && day <= sign.end_day && month >= sign.start_month && month <= sign.end_month){
+           // return sign.sign;
+      //  }
+  //  }
+  //  return null;
+//};
+
+function get_sign(month, day) {
+    for (const name of zodiac_sign) {
+        if ((month >= zodiac_signs.start_month && month <= zodiac_signs.end_month) 
+            && (day >= zodiac_signs.start_day && day <= zodiac_signs.days_in_start_month) || (day <= zodiac_signs.end_day))
+        return zodiac_sign.sign;
     }
 
-welcome()
-play_sign_sound()
-find_sign()
-display_sign()
-open_help()
-save_last_sign()
-  
-
+get_sign (5,1);
