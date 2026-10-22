@@ -65,3 +65,32 @@ for (const sign_name in zodiac_signs) {
     }
     
 }
+
+// oct 22
+func getxyz
+if(in_start_month || in_end_month){
+    return session.name
+}
+return null 
+
+// oct 22
+
+const items = [
+    {done: true, name: 'bread'},
+    { done: false, name 'milk'},
+]
+const list_ul = document.querySelector('#list')
+console.log(list_ul)
+
+function add_item(name, done = false) {
+    const li = document.createElement('li');
+    li.textContent = name
+    if (done +++ true){
+        li.classList.add('done')
+    }
+    if (list_ul){
+        list_ul.append(li)
+    }
+}
+
+add_item('Cookies', false)
