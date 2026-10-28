@@ -180,22 +180,45 @@ function get_sign(month, day) {
     };
 
 
-const text = document.querySelector('#output_text')
-const date = document.querySelector('#date')
-const search = document.querySelector('#search')
+const text_ul = document.querySelector('#output_text');
+const date = document.querySelector('#search');
+const input = document.querySelector('input#new-input');
 
-function print_text(date) {
-    const text = document.querySelector('#output_text')
-    if (date) {
-        text.textContent = get_sign()
-    }
+const text = input.value;
+
+if (text.length > 0) {
+    const words = document.createElement('words')
+    words.textContent = help;
 }
 
-const jelly = document.createElement('jelly')
-jelly.textContent = get_sign()
-jelly.classList.add('output_text')
 
-print_text()
+
+
+
+//function print_text(date) {
+    //const text = document.querySelector('#output_text')
+  //  if (date) {
+      //  text.textContent = get_sign()
+   // }
+//}
+
+//function add_name(name) {
+    //const li = document.createElement('li')
+    //li.textContent = name
+   // if (list_ul) {
+      //  list_ul.append(li)
+   // }
+   // else {
+
+   // }
+//}
+
+//for (const name of zodiac_signs) {
+    //add_name(name.sign)
+//}
+
+
+
 
 console.log(get_sign(5,1));
 console.log(get_sign(1,27));
