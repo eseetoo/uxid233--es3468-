@@ -184,15 +184,30 @@ const text_ul = document.querySelector('#output_text');
 const date = document.querySelector('#search');
 const input = document.querySelector('input#new-input');
 
-const text = input.value;
+//const text_box = document.querySelector('#text');
+//zodiac_signs.forEach(jelly => {
+   //console.log(jelly.textContent);
+//});
 
-if (text.length > 0) {
-    const words = document.createElement('words')
-    words.textContent = help;
-}
+//console.log(zodiac_signs[0].textContent);
+
+
+zodiac_signs.forEach(zodiac => {
+    const p = document.createElement('p');
+    p.textContent = zodiac.jelly;
+    const text = document.querySelector('#text');
+    text.appendChild(p);
+});
 
 
 
+
+//const text = input.value;
+
+//if (text.length > 0) {
+  //  const words = document.createElement('words')
+    //words.textContent = help;
+//}
 
 
 //function print_text(date) {
