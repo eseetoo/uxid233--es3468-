@@ -181,61 +181,41 @@ function get_sign(month, day) {
 
 
 const text_ul = document.querySelector('#output_text');
-const date = document.querySelector('#search');
-const input = document.querySelector('input#new-input');
-
-//const text_box = document.querySelector('#text');
-//zodiac_signs.forEach(jelly => {
-   //console.log(jelly.textContent);
-//});
-
-//console.log(zodiac_signs[0].textContent);
-
+const button = document.querySelector('#submit');
+const date = document.querySelector('#date');
 
 zodiac_signs.forEach(zodiac => {
-    const p = document.createElement('p');
+    const p = document.createElement('button');
     p.textContent = zodiac.jelly;
     const text = document.querySelector('#text');
     text.appendChild(p);
 });
 
+if (button) {
+button.addEventListener('click', () => {
+    console.log('submit clicked');
+})
+};
 
+if (date) {
+    date.addEventListener('change', () => {
+        console.log('date changed');
+    })
+};
 
-
-//const text = input.value;
-
-//if (text.length > 0) {
-  //  const words = document.createElement('words')
-    //words.textContent = help;
-//}
-
-
-//function print_text(date) {
-    //const text = document.querySelector('#output_text')
-  //  if (date) {
-      //  text.textContent = get_sign()
-   // }
-//}
-
-//function add_name(name) {
-    //const li = document.createElement('li')
-    //li.textContent = name
-   // if (list_ul) {
-      //  list_ul.append(li)
-   // }
-   // else {
-
-   // }
-//}
-
-//for (const name of zodiac_signs) {
-    //add_name(name.sign)
-//}
+function render() {
+    if (date) {
+        date.addEventListener('change', () => {
+            let month = 
+        })
+ 
 
 
 
 
-console.log(get_sign(5,1));
-console.log(get_sign(1,27));
-console.log(get_sign(12,28));
-console.log(get_sign(1,2));
+
+
+//console.log(get_sign(5,1));
+//console.log(get_sign(1,27));
+//console.log(get_sign(12,28));
+//console.log(get_sign(1,2));
