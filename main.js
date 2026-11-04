@@ -1,8 +1,9 @@
+console.log("hi");
 const zodiac_signs = 
  
     [{sign: "Capricorn",
     id: "capricorn",
-    jelly: "Pinecone Tree",
+    jelly: "You are Pinecone Tree!",
     start_month: 12,
     start_day: 22,
     end_month: 1,
@@ -14,7 +15,7 @@ const zodiac_signs =
 
     {sign: "Aquarius",
     id: "aquarius",
-    jelly: "Ort and Tum Acorns",
+    jelly: "You are Ort and Tum Acorns!",
     start_month: 1,
     start_day: 20,
     end_month: 2,
@@ -26,7 +27,7 @@ const zodiac_signs =
 
     {sign: "Pisces",
     id: "pisces",
-    jelly: "Coral",
+    jelly: "You are Coral!",
     start_month: 2,
     start_day: 19,
     end_month: 3,
@@ -38,7 +39,7 @@ const zodiac_signs =
 
     {sign: "Aries",
     id: "aries",
-    jelly: "Boiled Egg Geek",
+    jelly: "You are Boiled Egg Geek!",
     start_month: 3,
     start_day: 21,
     end_month: 4,
@@ -50,7 +51,7 @@ const zodiac_signs =
 
     {sign: "Taurus",
     id: "taurus",
-    jelly: "Soyella Edamame Bean",
+    jelly: "You are Soyella Edamame Bean!",
     start_month: 4,
     start_day: 20,
     end_month: 5,
@@ -62,7 +63,7 @@ const zodiac_signs =
 
     {sign: "Gemini",
     id: "gemini",
-    jelly: "Pebble",
+    jelly: "You are Pebble!",
     start_month: 5,
     start_day: 21,
     end_month: 6,
@@ -74,7 +75,7 @@ const zodiac_signs =
 
     {sign: "Cancer",
     id: "cancer",
-    jelly: "Sports Kettlebell",
+    jelly: "You are Sports Kettlebell!",
     start_month: 6,
     start_day: 21,
     end_month: 7,
@@ -86,7 +87,7 @@ const zodiac_signs =
 
     {sign: "Leo",
     id: "leo",
-    jelly:"Egglantine Egg on Toast",
+    jelly:"You are Egglantine Egg on Toast!",
     start_month: 7,
     start_day: 23,
     end_month: 8,
@@ -98,7 +99,7 @@ const zodiac_signs =
 
     {sign: "Virgo",
     id: "virgo",
-    jelly: "Bagel",
+    jelly: "You are Bagel!",
     start_month: 8,
     start_day: 23,
     end_month: 9,
@@ -110,7 +111,7 @@ const zodiac_signs =
 
     {sign: "Libra",
     id: "libra",
-    jelly: "Happy Raindrop",
+    jelly: "You are Happy Raindrop!",
     start_month: 9,
     start_day: 23,
     end_month: 10,
@@ -122,7 +123,7 @@ const zodiac_signs =
 
     {sign: "Scorpio",
     id: "scorpio",
-    jelly: "Space Comet",
+    jelly: "You are Space Comet!",
     start_month: 10,
     start_day: 23,
     end_month: 11,
@@ -134,7 +135,7 @@ const zodiac_signs =
 
     {sign: "Sagittarius",
     id: "sagittarius",
-    jelly: "Eggetha Egg and Lance Soldier",
+    jelly: "You are Eggetha Egg and Lance Soldier!",
     start_month: 11,
     start_day: 22,
     end_month: 12,
@@ -173,7 +174,7 @@ for (let i=0; i < number_of_zodiac; i++) {
 function get_sign(month, day) {
     for (const sign of zodiac_signs) {
         if(month === sign.start_month && day >= sign.start_day || month === sign.end_month && day <= sign.end_day){
-            return sign.sign;
+            return sign.jelly;
         }
     }
     return null;
@@ -183,31 +184,72 @@ function get_sign(month, day) {
 const text_ul = document.querySelector('#output_text');
 const button = document.querySelector('#submit');
 const date = document.querySelector('#date');
+const text = document.querySelector('#text');
+
+
+const result = document.querySelector('#result');
+
 
 zodiac_signs.forEach(zodiac => {
     const p = document.createElement('button');
-    p.textContent = zodiac.jelly;
-    const text = document.querySelector('#text');
+
+    p.textContent = zodiac.sign;
+    p.id = zodiac.id;
+
     text.appendChild(p);
 });
 
-if (button) {
-button.addEventListener('click', () => {
-    console.log('submit clicked');
-})
-};
-
-if (date) {
-    date.addEventListener('change', () => {
-        console.log('date changed');
-    })
-};
+//value
+//function render() {
+  //  if (date) {
+      //  const value = event.target.value;
+       // const result = document.querySelector('#result');
+       // const month = date_input.getMonth() +1;
+       // const day = date_input.getDate() +1;
+       // result.textContent = get_sign(month,day);
+   // }
+//};
 
 function render() {
     if (date) {
-        date.addEventListener('change', () => {
-            let month = 
-        })
+        const value = date.value;
+        const month = Number(value[5] + value[6]);
+        const day = Number(value[8] + value[9]);
+
+        result.textContent = get_sign(month, day);
+    }
+};
+
+if (button) {
+    button.addEventListener('click', () => {
+        render();
+    })
+};
+
+//button.addEventListener('click' , () =>{
+   // if (text) {
+      //  const value = event.target.value;
+        //const month = Number(value[5] + value[6]);
+        //const day = Number(value[8] + value[9]);
+        //result.textContent=get_sign(month,day);
+    //}
+//});
+
+
+
+
+//check for changes
+//if (button) {
+//button.addEventListener('click', () => {
+  //  console.log('submit clicked');
+//})
+//};
+
+//if (date) {
+  //  date.addEventListener('change', () => {
+    //    console.log('date changed');
+    //})
+//};
  
 
 
