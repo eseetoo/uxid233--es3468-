@@ -239,17 +239,17 @@ if (button) {
 
 
 //check for changes
-//if (button) {
-//button.addEventListener('click', () => {
-  //  console.log('submit clicked');
-//})
-//};
+if (button) {
+button.addEventListener('click', () => {
+    console.log('submit clicked');
+})
+};
 
-//if (date) {
-  //  date.addEventListener('change', () => {
-    //    console.log('date changed');
-    //})
-//};
+if (date) {
+    date.addEventListener('change', () => {
+        console.log('date changed');
+    })
+};
  
 
 
