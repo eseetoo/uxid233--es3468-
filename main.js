@@ -197,6 +197,7 @@ zodiac_signs.forEach(zodiac => {
 
     p.textContent = zodiac.sign;
     p.id = zodiac.id;
+    p.classList.add('zodiac_button');
 
     p.addEventListener('click', () => {
         show_result(zodiac);
