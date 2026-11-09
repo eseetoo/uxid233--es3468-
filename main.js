@@ -174,7 +174,7 @@ for (let i=0; i < number_of_zodiac; i++) {
 function get_sign(month, day) {
     for (const sign of zodiac_signs) {
         if(month === sign.start_month && day >= sign.start_day || month === sign.end_month && day <= sign.end_day){
-            return sign.jelly;
+            return sign;
         }
     }
     return null;
@@ -189,12 +189,18 @@ const text = document.querySelector('#text');
 
 const result = document.querySelector('#result');
 
+const jellies = document.querySelector('#jellies');
+
 
 zodiac_signs.forEach(zodiac => {
     const p = document.createElement('button');
 
     p.textContent = zodiac.sign;
     p.id = zodiac.id;
+
+    p.addEventListener('click', () => {
+        show_result(zodiac);
+    });
 
     text.appendChild(p);
 });
@@ -210,13 +216,23 @@ zodiac_signs.forEach(zodiac => {
    // }
 //};
 
+function show_result(sign) {
+    result.textContent = sign.jelly;
+    jellies.src = sign.image_id;
+    jellies.alt = sign.image_alt;
+}
+
 function render() {
-    if (date) {
+    if (date.value) {
         const value = date.value;
         const month = Number(value[5] + value[6]);
         const day = Number(value[8] + value[9]);
 
-        result.textContent = get_sign(month, day);
+        const sign = get_sign(month, day);
+
+        if (sign) {
+            show_result(sign);
+        }
     }
 };
 
@@ -226,14 +242,6 @@ if (button) {
     })
 };
 
-//button.addEventListener('click' , () =>{
-   // if (text) {
-      //  const value = event.target.value;
-        //const month = Number(value[5] + value[6]);
-        //const day = Number(value[8] + value[9]);
-        //result.textContent=get_sign(month,day);
-    //}
-//});
 
 
 
