@@ -9,7 +9,7 @@ const zodiac_signs =
     end_month: 1,
     end_day: 19,
     sound: "audio/cap.mp3",
-    image_id: "jellies/bagel.jpg",
+    image_id: "jellies/bagel.png",
     image_alt: "smiling pinecone tree stuffed animal",
     description: "ambitious, disciplined, reserved"},
 
@@ -21,7 +21,7 @@ const zodiac_signs =
     end_month: 2,
     end_day: 18,
     sound: "audio/aqua.mp3",
-    image_id: "jellies/acorns.jpg",
+    image_id: "jellies/acorns.png",
     image_alt: "2 smiling acorn stuffed animals",
     description: "unconventional, intellectual, independent"},
 
@@ -33,7 +33,7 @@ const zodiac_signs =
     end_month: 3,
     end_day: 20,
     sound: "audio/pisc.mp3",
-    image_id: "jellies/coral.jpg",
+    image_id: "jellies/coral.png",
     image_alt: "pink smiling coral stuffed animal",
     description: "empathetic, imaginative, dreamy"},
 
@@ -45,7 +45,7 @@ const zodiac_signs =
     end_month: 4,
     end_day: 19,
     sound: "audio/aries.mp3",
-    image_id: "jellies/egg.jpg",
+    image_id: "jellies/egg.png",
     image_alt: "smiling boiled egg with glasses stuffed animal",
     description: "bold, impulsive, passionate"},
 
@@ -57,7 +57,7 @@ const zodiac_signs =
     end_month: 5,
     end_day: 20,
     sound: "audio/taur.mp3",
-    image_id: "jellies/soyella.jpg",
+    image_id: "jellies/soyella.png",
     image_alt: "smiling edamame bean stuffed animal",
     description: "loyal, grounded, stubborn"},
 
@@ -69,7 +69,7 @@ const zodiac_signs =
     end_month: 6,
     end_day: 20,
     sound: "audio/gem.mp3",
-    image_id: "jellies/pebble.jpg",
+    image_id: "jellies/pebble.png",
     image_alt: "smiling pebble stuffed animal",
     description: "witty, curious, adaptable"},
 
@@ -81,7 +81,7 @@ const zodiac_signs =
     end_month: 7,
     end_day: 22,
     sound: "audio/canc.mp3",
-    image_id: "jellies/kettleboard.jpg",
+    image_id: "jellies/kettleboard.png",
     image_alt: "smiling kettlebell stuffed animal",
     description: "nurturing, intuitive, sentimental"},
 
@@ -93,7 +93,7 @@ const zodiac_signs =
     end_month: 8,
     end_day: 22,
     sound: "audio/leo.mp3",
-    image_id: "jellies/eggToast.jpg",
+    image_id: "jellies/eggToast.png",
     image_alt: "smiling egg on toast stuffed animal",
     description: "charismatic, confident, dramatic"},
 
@@ -105,7 +105,7 @@ const zodiac_signs =
     end_month: 9,
     end_day: 22,
     sound: "audio/virg.mp3",
-    image_id: "jellies/bagel.jpg",
+    image_id: "jellies/bagel.png",
     image_alt: "smiling bagel stuffed animal",
     description: "analytical, meticulous, practical"},
 
@@ -117,7 +117,7 @@ const zodiac_signs =
     end_month: 10,
     end_day: 22,
     sound: "audio/lib.mp3",
-    image_id: "jellies/raindrop.jpg",
+    image_id: "jellies/raindrop.png",
     image_alt: "smiling blue raindrop stuffed animal",
     description: "charming, diplomatic, indecisive"},
 
@@ -129,7 +129,7 @@ const zodiac_signs =
     end_month: 11,
     end_day: 21,
     sound: "audio/scorp.mp3",
-    image_id: "jellies/comet.jpg",
+    image_id: "jellies/comet.png",
     image_alt: "smiling orange space comet stuffed animal",
     description: "intense, mysterious, magnetic"},
 
@@ -141,7 +141,7 @@ const zodiac_signs =
     end_month: 12,
     end_day: 21,
     sound: "audio/sag.mp3",
-    image_id: "jellies/eggetha.jpg",
+    image_id: "jellies/eggetha.png",
     image_alt: "smiling egg and egg holder stuffed animal",
     description: "adventurous, optimistic, restless"}];
 
