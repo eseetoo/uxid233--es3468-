@@ -9,9 +9,11 @@ const zodiac_signs =
     end_month: 1,
     end_day: 19,
     sound: "audio/cap.mp3",
-    image_id: "jellies/bagel.png",
+    image_id: "jellies/pinecone.png",
     image_alt: "smiling pinecone tree stuffed animal",
-    description: "ambitious, disciplined, reserved"},
+    description: "ambitious, disciplined, reserved",
+    sound: "audio/sound1.mp3",
+    title: "Capricorn Audio"},
 
     {sign: "Aquarius",
     id: "aquarius",
@@ -23,7 +25,9 @@ const zodiac_signs =
     sound: "audio/aqua.mp3",
     image_id: "jellies/acorns.png",
     image_alt: "2 smiling acorn stuffed animals",
-    description: "unconventional, intellectual, independent"},
+    description: "unconventional, intellectual, independent",
+    sound: "audio/sound2.mp3",
+    title: "Capricorn Audio"},
 
     {sign: "Pisces",
     id: "pisces",
@@ -35,7 +39,9 @@ const zodiac_signs =
     sound: "audio/pisc.mp3",
     image_id: "jellies/coral.png",
     image_alt: "pink smiling coral stuffed animal",
-    description: "empathetic, imaginative, dreamy"},
+    description: "empathetic, imaginative, dreamy",
+    sound: "audio/sound3.mp3",
+    title: "Capricorn Audio"},
 
     {sign: "Aries",
     id: "aries",
@@ -47,7 +53,9 @@ const zodiac_signs =
     sound: "audio/aries.mp3",
     image_id: "jellies/egg.png",
     image_alt: "smiling boiled egg with glasses stuffed animal",
-    description: "bold, impulsive, passionate"},
+    description: "bold, impulsive, passionate",
+    sound: "audio/sound4.mp3",
+    title: "Capricorn Audio"},
 
     {sign: "Taurus",
     id: "taurus",
@@ -59,7 +67,9 @@ const zodiac_signs =
     sound: "audio/taur.mp3",
     image_id: "jellies/soyella.png",
     image_alt: "smiling edamame bean stuffed animal",
-    description: "loyal, grounded, stubborn"},
+    description: "loyal, grounded, stubborn",
+    sound: "audio/sound5.mp3",
+    title: "Capricorn Audio"},
 
     {sign: "Gemini",
     id: "gemini",
@@ -71,7 +81,9 @@ const zodiac_signs =
     sound: "audio/gem.mp3",
     image_id: "jellies/pebble.png",
     image_alt: "smiling pebble stuffed animal",
-    description: "witty, curious, adaptable"},
+    description: "witty, curious, adaptable",
+    sound: "audio/sound6.mp3",
+    title: "Capricorn Audio"},
 
     {sign: "Cancer",
     id: "cancer",
@@ -83,7 +95,9 @@ const zodiac_signs =
     sound: "audio/canc.mp3",
     image_id: "jellies/kettleboard.png",
     image_alt: "smiling kettlebell stuffed animal",
-    description: "nurturing, intuitive, sentimental"},
+    description: "nurturing, intuitive, sentimental",
+    sound: "audio/sound7.mp3",
+    title: "Capricorn Audio"},
 
     {sign: "Leo",
     id: "leo",
@@ -95,7 +109,9 @@ const zodiac_signs =
     sound: "audio/leo.mp3",
     image_id: "jellies/eggToast.png",
     image_alt: "smiling egg on toast stuffed animal",
-    description: "charismatic, confident, dramatic"},
+    description: "charismatic, confident, dramatic",
+    sound: "audio/sound8.mp3",
+    title: "Capricorn Audio"},
 
     {sign: "Virgo",
     id: "virgo",
@@ -107,7 +123,9 @@ const zodiac_signs =
     sound: "audio/virg.mp3",
     image_id: "jellies/bagel.png",
     image_alt: "smiling bagel stuffed animal",
-    description: "analytical, meticulous, practical"},
+    description: "analytical, meticulous, practical",
+    sound: "audio/sound9.mp3",
+    title: "Capricorn Audio"},
 
     {sign: "Libra",
     id: "libra",
@@ -119,7 +137,9 @@ const zodiac_signs =
     sound: "audio/lib.mp3",
     image_id: "jellies/raindrop.png",
     image_alt: "smiling blue raindrop stuffed animal",
-    description: "charming, diplomatic, indecisive"},
+    description: "charming, diplomatic, indecisive",
+    sound: "audio/sound10.mp3",
+    title: "Capricorn Audio"},
 
     {sign: "Scorpio",
     id: "scorpio",
@@ -131,7 +151,9 @@ const zodiac_signs =
     sound: "audio/scorp.mp3",
     image_id: "jellies/comet.png",
     image_alt: "smiling orange space comet stuffed animal",
-    description: "intense, mysterious, magnetic"},
+    description: "intense, mysterious, magnetic",
+    sound: "audio/sound11.mp3",
+    title: "Capricorn Audio"},
 
     {sign: "Sagittarius",
     id: "sagittarius",
@@ -143,7 +165,9 @@ const zodiac_signs =
     sound: "audio/sag.mp3",
     image_id: "jellies/eggetha.png",
     image_alt: "smiling egg and egg holder stuffed animal",
-    description: "adventurous, optimistic, restless"}];
+    description: "adventurous, optimistic, restless",
+    sound: "audio/sound12.mp3",
+    title: "Capricorn Audio"}];
 
     console.log(zodiac_signs)
 
@@ -201,6 +225,13 @@ zodiac_signs.forEach(zodiac => {
 
     p.addEventListener('click', () => {
         show_result(zodiac);
+
+        stop_sounds();
+
+        const current_sound = new Audio(zodiac.sound);
+        current_sound.play();
+
+        audio_files.push(current_sound);
     });
 
     text.appendChild(p);
@@ -221,6 +252,38 @@ function show_result(sign) {
     result.textContent = sign.jelly;
     jellies.src = sign.image_id;
     jellies.alt = sign.image_alt;
+
+    stop_sounds();
+
+    const the_sound = new Audio(sign.sound);
+    the_sound.play();
+    audio_files.push(the_sound);
+}
+
+const audio_player = document.querySelector('#audio_button');
+const stop_button = document.createElement('button');
+stop_button.textContent = 'Stop Audio';
+stop_button.classList.add('stop_button');
+
+stop_button.addEventListener('click', () => {
+    stop_sounds();
+});
+
+audio_button.appendChild(stop_button);
+
+
+const audio_files = [];
+
+for (const sign of zodiac_signs) {
+    const sound = new Audio(sign.sound);
+    audio_files.push(sound);
+}
+
+function stop_sounds() {
+    for(const current_sound of audio_files) {
+        current_sound.pause();
+        current_sound.currentTime = 0;
+    }
 }
 
 function render() {
@@ -259,7 +322,7 @@ if (date) {
         console.log('date changed');
     })
 };
- 
+
 
 
 
